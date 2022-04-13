@@ -4,7 +4,10 @@ import java.util.Arrays;
 public abstract class KeywordAnalyzer implements TextAnalyzer {
     private String [] keywords;
 
-    public abstract Label processText(String text);
+    @Override
+    public Label processText(String text) {
+        return null;
+    }
 
     protected abstract String getKeywords();
 
