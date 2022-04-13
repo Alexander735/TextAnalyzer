@@ -8,5 +8,5 @@ public abstract class KeywordAnalyzer implements TextAnalyzer {
 
     protected abstract String getKeywords();
 
-    abstract protected Label getLabel();
+    protected abstract Label getLabel();
 }
