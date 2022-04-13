@@ -3,21 +3,10 @@ package CommentsAnalyzerTask;
 import java.util.Arrays;
 
 public abstract class KeywordAnalyzer implements TextAnalyzer {
-    private String [] keywords;
 
-    public Label processText(String text) {
-        for (String i : keywords) {
-            if (text.contains(i)) {
-                getLabel();
-            }
-        }
+    public abstract Label processText(String text);
 
-        return Label.OK;
-    }
-
-    protected String getKeywords() {
-        return Arrays.toString(keywords);
-    }
+    protected abstract String getKeywords();
 
     abstract protected Label getLabel();
 }
