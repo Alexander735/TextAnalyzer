@@ -5,13 +5,11 @@ public class Main {
     public static void main(String[] args) {
     }
 
-    Label checkLabels(TextAnalyzer[] analyzers, String text) {
-        for (TextAnalyzer i : analyzers) {
-            if (!i.processText(text).equals(Label.OK)) {
-                return i.processText(text);
-            }
-        }
 
+    public Label checkLabels(TextAnalyzer[] analyzers, String text) {
+        for(TextAnalyzer analyzer: analyzers) {
+            if(analyzer.processText(text) != Label.OK) return analyzer.processText(text);
+        }
         return Label.OK;
     }
 }

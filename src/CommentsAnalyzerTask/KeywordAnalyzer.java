@@ -2,14 +2,18 @@ package CommentsAnalyzerTask;
 import java.util.Arrays;
 
 public abstract class KeywordAnalyzer implements TextAnalyzer {
-    private String [] keywords;
+
+
+    abstract protected String[] getKeywords();
+
+    abstract protected Label getLabel();
 
     @Override
     public Label processText(String text) {
-        return null;
+        for (String keyword : getKeywords()) {
+            if (text.contains(keyword))
+                return getLabel();
+        }
+        return Label.OK;
     }
-
-    protected abstract String getKeywords();
-
-    protected abstract Label getLabel();
 }
